@@ -1,70 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Timeoverflow by coopdevs</title>
+    <meta name="description" content="Timeoverflow : A time banking system">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Timeoverflow</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Timeoverflow</h1>
-        <p>A time banking system</p>
-        <p class="view"><a href="https://github.com/coopdevs/timeoverflow">View the Project on GitHub <small>coopdevs/timeoverflow</small></a></p>
-        <ul>
-          <li><a href="https://github.com/coopdevs/timeoverflow/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/coopdevs/timeoverflow/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/coopdevs/timeoverflow">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/coopdevs/timeoverflow">View on GitHub</a>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+          <h1 id="project_title">Timeoverflow</h1>
+          <h2 id="project_tagline">A time banking system</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/coopdevs/timeoverflow/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/coopdevs/timeoverflow/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="timeoverflow" class="anchor" href="#timeoverflow"><span class="octicon octicon-link"></span></a>TimeOverflow</h1>
+
+<p><a href="https://travis-ci.org/coopdevs/timeoverflow"><img src="https://travis-ci.org/coopdevs/timeoverflow.png" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/timeoverflow/timeoverflow"><img src="https://codeclimate.com/github/timeoverflow/timeoverflow.png" alt="Code Climate"></a></p>
+
+<p>Sistema de Banco de Tiempo. </p>
+
+<p>Mira la nueva página de TimeOverflow: <a href="http://coopdevs.github.io/timeoverflow/">http://coopdevs.github.io/timeoverflow/</a></p>
+
+<p>TimeOverflow es un software desarrollado de manera altruista para ofrecer un sistema que facilite la interacción 
+de los miembros y la gestión de los Bancos de Tiempo. El modelo sobre el que se trabaja está guiado por las necesidades de los Bancos de Tiempo 
+que hacen uso de él y está preparado para poder albergar varios Bancos de Tiempo en una sola instalación, para ello cuenta
+con tres niveles de privilegios: superadmin, admin (solo gestiona un Banco) y miembros de un Banco.</p>
+
+<p>TimeOverflow está dividido en 2 grandes bloques:</p>
+
+<ul>
+<li><strong>Sistema de gestión</strong></li>
+<li><strong>Red social y banca on-line</strong></li>
+</ul>
+
+<p><em>NOTA: Un Banco de Tiempo físico puede funcionar solo con el bloque de gestión, podría ocurrir, por ejemplo, que la inmensa</em>
+<em>mayoria de sus miembros no usen Internet y podrían querer funcionar solo con listados, cheques y una oficina de gestión</em></p>
+
+<h2>
+<a name="sistema-de-gesti%C3%B3n" class="anchor" href="#sistema-de-gesti%C3%B3n"><span class="octicon octicon-link"></span></a>Sistema de gestión</h2>
+
+<p>Los Bancos de Tiempo físicos (a los que principalmente se enfoca TimeOverflow) a menudo funcionan sin internet, se realizan
+unos listados de servicios y de miembros y se pagan las horas con talones que finalmente se ingresan en la oficina, por tanto
+el sistema de gestión nos permite gestionar los miembros y sus servicios, sacar listados y llevar la contabilidad. También
+es importante que los gestores del Banco (admin), tengan información útil sobre la comunidad para poder actuar sobre ella 
+(por ejemplo, estadísticas sobre usuarios poco activos, gestión de incidencias, equilibrio de las cuentas, etc)</p>
+
+<h2>
+<a name="red-social-y-banca-on-line" class="anchor" href="#red-social-y-banca-on-line"><span class="octicon octicon-link"></span></a>Red social y banca on-line</h2>
+
+<p>La red social facilita a los miembros encontrarse y conocerse fuera de los eventos programados por el Banco de Tiempo, 
+así como poder publicar anuncios de ofertas/demandas explicados en detalle.</p>
+
+<p>Por otro lado los miembros pueden pagarse los servicios de manera virtual para ahorrarse el paso por la oficina del Banco
+de Tiempo y también tienen la posibilidad de consultar el extracto de su cuenta.</p>
+
+<h1>
+<a name="erd" class="anchor" href="#erd"><span class="octicon octicon-link"></span></a>ERD</h1>
+
+<p>Entity-relation diagram written using</p>
+
+<pre><code>bundle exec rake erd filetype=png inheritance=false polymorphism=true indirect=false
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p><img src="./erd.png" alt="ERD"></p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>This project is in the public domain.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<h1>
+<a name="wireframes" class="anchor" href="#wireframes"><span class="octicon octicon-link"></span></a>Wireframes</h1>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><a href="https://moqups.com/sseerrggii/JIu1Z1eD/">https://moqups.com/sseerrggii/JIu1Z1eD/</a></p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<h1>
+<a name="notas-para-desarrollo" class="anchor" href="#notas-para-desarrollo"><span class="octicon octicon-link"></span></a>Notas para desarrollo</h1>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Únete al equipo de colaboradores!! Gestionamos las tareas en Redbooth.com <a href="https://redbooth.com/public/timeoverflow">https://redbooth.com/public/timeoverflow</a></p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Si quieres probar la plataforma en local, necesitas PostgreSQL y ruby en sus últimas versiones.</p>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/coopdevs">coopdevs</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Timeoverflow maintained by <a href="https://github.com/coopdevs">coopdevs</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
