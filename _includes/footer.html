@@ -1,6 +1,11 @@
 <div id="footer_wrap" class="outer">
   <footer class="inner">
-    <p class="copyright">Timeoverflow maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+    <p class="copyright">Timeoverflow maintained by
+      {% if site.github %}
+        <a href="{{ site.github.owner_url }}">{{ site.github.owner_name || 'owner_name' }}</a>
+      {% else %}
+        <a href="/">Yourself</a>
+      {% endif %}</p>
     <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
   </footer>
 </div>

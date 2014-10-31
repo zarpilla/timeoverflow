@@ -3,31 +3,31 @@ defaults:
     values:
       layout: default
 
-github:
-  hostname: "github.com"
-  pages_hostname: "github.io"
-  api_url: "https://api.github.com"
-  environment: "dotcom"
-  public_repositories: ....
-  organization_members: ....
-  build_revision: "cbd866ebf142088896cbe71422b949de7f864bce"
-  project_title: "TimeOverflow"
-  project_tagline: "A platform for time banks"
-  owner_name: "coopdevs"
-  owner_url: "https://github.com/coopdevs"
-  owner_gravatar_url: "https://github.com/coopdevs.png"
-  repository_url: "https://github.com/coopdevs/timeoverflow"
-  repository_nwo: "coopdevs/timeoverflow"
-  repository_name: "timeoverflow"
-  zip_url: "https://github.com/coopdevs/timeoverflow/zipball/gh-pages"
-  tar_url: "https://github.com/coopdevs/timeoverflow/tarball/gh-pages"
-  clone_url: "https://github.com/coopdevs/timeoverflow.git"
-  releases_url: "https://github.com/coopdevs/timeoverflow/releases"
-  issues_url: "https://github.com/coopdevs/timeoverflow/issues"
-  wiki_url: "https://github.com/coopdevs/timeoverflow/wiki"
-  language: null
-  is_user_page: false
-  is_project_page: true
-  show_downloads: true
-  url: "/" #"http://username.github.io/metadata-example"
-  contributors: ....
+# github:
+#   hostname: "github.com"
+#   pages_hostname: "github.io"
+#   api_url: "https://api.github.com"
+#   environment: "dotcom"
+#   public_repositories: ....
+#   organization_members: ....
+#   build_revision: "cbd866ebf142088896cbe71422b949de7f864bce"
+#   project_title: "TimeOverflow"
+#   project_tagline: "A platform for time banks"
+#   owner_name: "coopdevs"
+#   owner_url: "https://github.com/coopdevs"
+#   owner_gravatar_url: "https://github.com/coopdevs.png"
+#   repository_url: "https://github.com/coopdevs/timeoverflow"
+#   repository_nwo: "coopdevs/timeoverflow"
+#   repository_name: "timeoverflow"
+#   zip_url: "https://github.com/coopdevs/timeoverflow/zipball/gh-pages"
+#   tar_url: "https://github.com/coopdevs/timeoverflow/tarball/gh-pages"
+#   clone_url: "https://github.com/coopdevs/timeoverflow.git"
+#   releases_url: "https://github.com/coopdevs/timeoverflow/releases"
+#   issues_url: "https://github.com/coopdevs/timeoverflow/issues"
+#   wiki_url: "https://github.com/coopdevs/timeoverflow/wiki"
+#   language: null
+#   is_user_page: false
+#   is_project_page: true
+#   show_downloads: true
+#   url: "/" #"http://username.github.io/metadata-example"
+#   contributors: ....
