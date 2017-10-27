@@ -55,6 +55,7 @@ group :development do
   gem "quiet_assets"
   gem 'localeapp', '2.1.1', require: false
   gem 'letter_opener', '1.4.1'
+  gem 'letter_opener_web', '1.3.1'
 end
 
 group :development, :test do

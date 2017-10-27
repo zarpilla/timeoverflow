@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
   get "global/switch_lang", as: :switch_lang
 
   resources :offers do
