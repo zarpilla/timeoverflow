@@ -43,9 +43,13 @@ describe Taggable do
 
     it 'sorts them by alphabetical order case insensitive' do
       expect(Offer.alphabetical_grouped_tags).to eq({
-        'B' => [['bar', 1], ['baz', 2], ['Boo', 1]],
-        'F' => [['foo', 2]],
-        'Q' => [['qux', 1]]
+        'B' => [
+          Taggable::Tag.new('bar', 1),
+          Taggable::Tag.new('baz', 2),
+          Taggable::Tag.new('Boo', 1)
+        ],
+        'F' => [Taggable::Tag.new('foo', 2)],
+        'Q' => [Taggable::Tag.new('qux', 1)]
       })
     end
   end

@@ -5,6 +5,20 @@
 module Taggable
   extend ActiveSupport::Concern
 
+  Tag = Struct.new(:name, :count) do
+    def downcase_name
+      name.downcase
+    end
+
+    def initial
+      name[0].capitalize
+    end
+
+    def to_s
+      name.to_s
+    end
+  end
+
   included do
     scope :tagged_with, ->(tag) { where("? = ANY (tags)", tag) }
   end
@@ -27,19 +41,6 @@ module Taggable
       all_tags.uniq.sort
     end
 
-    # Buils a hash where the keys are the tags and the values are the number of
-    # their occurrences
-    #
-    # @return [Hash<String => Integer>]
-    def tag_cloud
-      Hash[
-        all_tags
-          .group_by(&:to_s)
-          .map { |tag_name, values| [tag_name, values.size] }
-          .sort_by { |array| array.first.downcase }
-      ]
-    end
-
     def find_like_tag(pattern)
       all_tags.uniq.select { |t| t =~ /#{pattern}/i }
     end
@@ -50,12 +51,10 @@ module Taggable
     #
     # @return [Hash<Array<Array<String, Integer>>>]
     def tag_cloud
-      Hash[
-        all_tags
-          .group_by(&:to_s)
-          .map { |tag_name, values| [tag_name, values.size] }
-          .sort_by { |array| array.first.downcase }
-      ]
+      all_tags
+        .group_by(&:to_s)
+        .map { |tag_name, count| Tag.new(tag_name, count.size) }
+        .sort_by { |tag| tag.downcase_name }
     end
 
     def find_like_tag(pattern)
@@ -63,7 +62,7 @@ module Taggable
     end
 
     def alphabetical_grouped_tags
-      tag_cloud.group_by { |tag_name, _| tag_name[0].capitalize }
+      tag_cloud.group_by { |tag| tag.initial }
     end
   end
 end
