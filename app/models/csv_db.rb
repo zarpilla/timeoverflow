@@ -3,9 +3,14 @@ require "csv"
 class CsvDb
   class << self
     def user_from_row(row)
-      User.new(username: row[2..4].join(" "), date_of_birth: row[6],
-               email: row[9], phone: row[7], alt_phone: row[8],
-               gender: User::GENDERS[row[5].to_i - 1])
+      User.new(
+        username: row[2..4].join(" "),
+        date_of_birth: row[6],
+        email: row[9],
+        phone: row[7],
+        alt_phone: row[8],
+        gender: User::GENDERS[row[5].to_i - 1]
+      )
     end
 
     def member_from_row(row, user, organization, errors)
