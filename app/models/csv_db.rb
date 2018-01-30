@@ -10,20 +10,20 @@ class CsvDb
     :phone,
     :alt_phone,
     :gender
-  )
-
-  class << self
-    def user_from_row(row)
+  ) do
+    def user_from_row
       User.new(
-        username: row.username,
-        date_of_birth: row.date_of_birth,
-        email: row.email,
-        phone: row.phone,
-        alt_phone: row.alt_phone,
-        gender: row.gender
+        username: username,
+        date_of_birth: date_of_birth,
+        email: email,
+        phone: phone,
+        alt_phone: alt_phone,
+        gender: gender
       )
     end
+  end
 
+  class << self
     def member_from_row(row, user, organization, errors)
       member = organization.members.create(member_uid: row.member_id,
                                            entry_date: row.entry_date,
@@ -34,7 +34,7 @@ class CsvDb
     end
 
     def process_row(row, organization, errors)
-      user = user_from_row(row)
+      user = row.user_from_row
       user.skip_confirmation! # auto-confirm, not sending confirmation email
 
       if user.save
