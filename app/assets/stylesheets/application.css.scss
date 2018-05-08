@@ -2,8 +2,10 @@
  *= require_self
  */
 
+
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap-custom";
+@import "materialize-custom";
 
 $bg-color: #f5f8fa;
 $navs-bg-color: #1e1e1e;

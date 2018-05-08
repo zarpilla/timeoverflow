@@ -1,4 +1,5 @@
 #= require_self
+#= require materialize
 #= require datepicker
 #= require give_time
 #= require tags
