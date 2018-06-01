@@ -22,7 +22,7 @@ gem 'prawn', '~> 2.2.0'
 gem 'prawn-table', '~> 0.2.2'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'skylight'
+gem 'skylight', '> 1.5'
 
 # Assets
 gem 'jquery-rails', '>= 4.2.0'

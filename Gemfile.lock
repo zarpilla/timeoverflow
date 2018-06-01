@@ -410,7 +410,7 @@ DEPENDENCIES
   select2-rails
   shoulda (>= 3.5)
   simple_form (>= 3.0.0)
-  skylight
+  skylight (> 1.5)
   uglifier (= 2.7.2)
   unicorn
   web-console (= 2.1.3)
