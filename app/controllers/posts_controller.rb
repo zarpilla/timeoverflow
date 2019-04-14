@@ -90,7 +90,6 @@ class PostsController <  ApplicationController
 
   def set_user_id(p)
     if current_user.manages?(current_organization)
-      p.update publisher_id: current_user.id
       p.reverse_merge! user_id: current_user.id
     else
       p.update user_id: current_user.id
@@ -99,8 +98,8 @@ class PostsController <  ApplicationController
 
   def post_params
     permitted_fields = [:description, :end_on, :global, :joinable, :permanent,
-                        :start_on, :title, :category_id, :user_id,
-                        :publisher_id, :active, tag_list: []]
+                        :start_on, :title, :category_id, :user_id, :is_group,
+                        :active, tag_list: []]
 
     params.fetch(resource, {}).permit(*permitted_fields).tap do |p|
       set_user_id(p)
